@@ -312,7 +312,9 @@ GYEONGNAM = region_page(
     ],
     [("양산·물금", "/life/yangsan-mulgeum/"), ("진주혁신도시", "/life/jinju-innovation-city/"),
      ("거제·통영", "/life/geoje-tongyeong/"), ("사천·삼천포", "/life/sacheon-samcheonpo/"),
-     ("밀양", "/life/miryang-city/"), ("남해·하동", "/life/namhae-hadong/")],
+     ("밀양", "/life/miryang-city/"), ("남해·하동", "/life/namhae-hadong/"),
+     ("거창·함양", "/life/geochang-hamyang/"), ("창녕·함안", "/life/changnyeong-haman/"),
+     ("고성", "/life/goseong-dinosaur/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -341,7 +343,8 @@ GYEONGBUK = region_page(
     ],
     [("포항·경주", "/life/pohang-gyeongju/"), ("구미·김천", "/life/gumi-gimcheon/"),
      ("안동·도청신도시", "/life/andong-dochung/"), ("경산·하양", "/life/gyeongsan-hayang/"),
-     ("영주·문경", "/life/yeongju-mungyeong/")],
+     ("영주·문경", "/life/yeongju-mungyeong/"), ("칠곡·왜관", "/life/chilgok-waegwan/"),
+     ("울진·영덕", "/life/uljin-yeongdeok/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -794,3 +797,5 @@ from content_more4 import MORE_PAGES4  # noqa: E402
 PAGES += MORE_PAGES4
 from content_more5 import MORE_PAGES5  # noqa: E402
 PAGES += MORE_PAGES5
+from content_more6 import MORE_PAGES6  # noqa: E402
+PAGES += MORE_PAGES6
