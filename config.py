@@ -12,4 +12,4 @@ OG_IMAGE = SITE_URL + "/assets/img/og-default.svg"
 # Hero banner image shown inside every page's hero box.
 # Upload your image to assets/img/hero.jpg (or change the path/extension here).
 # Set to "" to disable the hero image site-wide.
-HERO_IMAGE = "/assets/img/hero.jpg"
+HERO_IMAGE = "/assets/img/hero.webp"
