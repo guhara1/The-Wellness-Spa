@@ -220,9 +220,10 @@ CHANGWON = region_page(
     [
         {"title": "상남·중앙", "body": "창원 핵심 도심·상권. 오피스텔 공동현관·주차 확인.", "url": "/life/changwon-sangnam-jungang/"},
         {"title": "의창·성산", "body": "행정·업무지구와 팔용 생활권. 아파트 단지 출입 확인.", "url": "/changwon/"},
+        {"title": "의창·성산", "body": "도청·시청 행정·업무지구와 초고층 아파트(유니시티). 출입 확인.", "url": "/life/changwon-uichang-seongsan/"},
         {"title": "창원국가산단·진해", "body": "산단 인접 장기 출장 숙소·진해 해안. 야간 이동·주차 확인.", "url": "/life/changwon-industrial-jinhae/"},
     ],
-    [("상남·중앙", "/life/changwon-sangnam-jungang/"),
+    [("상남·중앙", "/life/changwon-sangnam-jungang/"), ("의창·성산", "/life/changwon-uichang-seongsan/"),
      ("창원국가산단·진해", "/life/changwon-industrial-jinhae/"), ("창원중앙역", "/changwon/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("스웨디시", "/program/swedish/"),
      ("아로마테라피", "/program/aroma-therapy/")],
@@ -301,10 +302,12 @@ GYEONGNAM = region_page(
         {"title": "양산·물금", "body": "물금 신도시 아파트·오피스텔. 부산·울산 사이 이동 거리 확인.", "url": "/life/yangsan-mulgeum/"},
         {"title": "진주·혁신도시", "body": "평거·가좌·혁신도시 생활권. KTX·터미널 이동 기준 확인.", "url": "/life/jinju-innovation-city/"},
         {"title": "거제·통영", "body": "조선업 숙소·해안 리조트. 장거리 이동과 숙소 정책 확인.", "url": "/life/geoje-tongyeong/"},
-        {"title": "사천·밀양", "body": "삼천포·밀양 도심 생활권. 이동 거리·예약 시간대 확인.", "url": "/gyeongnam/"},
+        {"title": "사천·삼천포", "body": "사천 항공산단(KAI)과 삼천포항 관광권. 산단·펜션 기준 확인.", "url": "/life/sacheon-samcheonpo/"},
+        {"title": "밀양", "body": "밀양 도심·나노국가산단·밀양역 KTX. 도심·산단 숙소 확인.", "url": "/life/miryang-city/"},
     ],
     [("양산·물금", "/life/yangsan-mulgeum/"), ("진주혁신도시", "/life/jinju-innovation-city/"),
-     ("거제·통영", "/life/geoje-tongyeong/"), ("통영·죽림", "/gyeongnam/")],
+     ("거제·통영", "/life/geoje-tongyeong/"), ("사천·삼천포", "/life/sacheon-samcheonpo/"),
+     ("밀양", "/life/miryang-city/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -356,9 +359,11 @@ JEJU = region_page(
         {"title": "제주공항·용담", "body": "공항 인접 숙소·렌터카 이동 거점. 이동 거리 확인.", "url": "/jeju/"},
         {"title": "애월·함덕", "body": "해안 펜션·독채. 야간 이동 거리와 숙소 정책 확인.", "url": "/life/jeju-aewol-hamdeok/"},
         {"title": "중문·성산", "body": "중문 관광단지 리조트·호텔과 성산 동부. 성수기·장거리 확인.", "url": "/life/jeju-jungmun-seongsan/"},
+        {"title": "서귀포 도심", "body": "이중섭거리·올레시장 구도심과 강정 혁신도시. 이동 거리 확인.", "url": "/life/seogwipo-downtown/"},
     ],
     [("연동·노형", "/life/jeju-city-seogwipo/"), ("제주공항", "/jeju/"),
-     ("애월·함덕", "/life/jeju-aewol-hamdeok/"), ("중문·성산", "/life/jeju-jungmun-seongsan/")],
+     ("애월·함덕", "/life/jeju-aewol-hamdeok/"), ("중문·성산", "/life/jeju-jungmun-seongsan/"),
+     ("서귀포 도심", "/life/seogwipo-downtown/")],
     [("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -775,3 +780,5 @@ from content_more import MORE_PAGES  # noqa: E402
 PAGES += MORE_PAGES
 from content_more2 import MORE_PAGES2  # noqa: E402
 PAGES += MORE_PAGES2
+from content_more3 import MORE_PAGES3  # noqa: E402
+PAGES += MORE_PAGES3
