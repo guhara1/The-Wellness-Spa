@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e131c"/><stop offset="1" stop-color="#0b0f16"/>
+    </linearGradient>
+    <linearGradient id="or" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8f3d"/><stop offset="1" stop-color="#f26a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="320" fill="#ff7a18" opacity="0.12"/>
+  <rect x="90" y="235" width="70" height="70" rx="18" fill="url(#or)"/>
+  <text x="125" y="286" font-family="Pretendard,Arial,sans-serif" font-size="34" font-weight="900" fill="#fff" text-anchor="middle">GO</text>
+  <text x="185" y="288" font-family="Pretendard,Arial,sans-serif" font-size="46" font-weight="800" fill="#f6f8fc">간다GO</text>
+  <text x="90" y="380" font-family="Pretendard,Arial,sans-serif" font-size="52" font-weight="800" fill="#f6f8fc">부산·경남·경북·제주 출장마사지</text>
+  <text x="90" y="450" font-family="Pretendard,Arial,sans-serif" font-size="34" font-weight="600" fill="#aab4c6">주요 생활권별 방문 가능 지역 안내</text>
+  <text x="90" y="540" font-family="Pretendard,Arial,sans-serif" font-size="30" font-weight="700" fill="#ff8f3d">전화 예약 0508-202-4719</text>
+</svg>
