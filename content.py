@@ -196,7 +196,8 @@ BUSAN = region_page(
      ("동래·온천장", "/life/busan-dongnae-oncheon/"), ("사상·하단", "/life/busan-sasang-hadan/"),
      ("기장·정관", "/life/busan-gijang-jeonggwan/"), ("명지·강서·공항", "/life/busan-west-airport-myeongji/"),
      ("남구·대연·문현", "/life/busan-namgu-daeyeon/"), ("금정·부산대", "/life/busan-geumjeong-pnu/"),
-     ("북구·화명·덕천", "/life/busan-bukgu-hwamyeong/")],
+     ("북구·화명·덕천", "/life/busan-bukgu-hwamyeong/"), ("영도", "/life/busan-yeongdo/"),
+     ("서구·송도", "/life/busan-seogu-songdo/")],
     [("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -307,10 +308,11 @@ GYEONGNAM = region_page(
         {"title": "거제·통영", "body": "조선업 숙소·해안 리조트. 장거리 이동과 숙소 정책 확인.", "url": "/life/geoje-tongyeong/"},
         {"title": "사천·삼천포", "body": "사천 항공산단(KAI)과 삼천포항 관광권. 산단·펜션 기준 확인.", "url": "/life/sacheon-samcheonpo/"},
         {"title": "밀양", "body": "밀양 도심·나노국가산단·밀양역 KTX. 도심·산단 숙소 확인.", "url": "/life/miryang-city/"},
+        {"title": "남해·하동", "body": "독일마을·섬진강·화개장터 서부 해안 관광권. 펜션·이동 확인.", "url": "/life/namhae-hadong/"},
     ],
     [("양산·물금", "/life/yangsan-mulgeum/"), ("진주혁신도시", "/life/jinju-innovation-city/"),
      ("거제·통영", "/life/geoje-tongyeong/"), ("사천·삼천포", "/life/sacheon-samcheonpo/"),
-     ("밀양", "/life/miryang-city/")],
+     ("밀양", "/life/miryang-city/"), ("남해·하동", "/life/namhae-hadong/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -335,9 +337,11 @@ GYEONGBUK = region_page(
         {"title": "구미·김천", "body": "구미국가산단·김천혁신도시. KTX·장기 출장 숙소 이동 확인.", "url": "/life/gumi-gimcheon/"},
         {"title": "안동·도청신도시", "body": "경북도청신도시 신축 아파트·안동 구도심. 이동 거리 확인.", "url": "/life/andong-dochung/"},
         {"title": "경산·하양", "body": "대구 인접 대학가 원룸·오피스텔과 산업권. 공간·주차 확인.", "url": "/life/gyeongsan-hayang/"},
+        {"title": "영주·문경", "body": "부석사·풍기온천·문경새재·문경온천 북부 내륙 관광권. 이동 확인.", "url": "/life/yeongju-mungyeong/"},
     ],
     [("포항·경주", "/life/pohang-gyeongju/"), ("구미·김천", "/life/gumi-gimcheon/"),
-     ("안동·도청신도시", "/life/andong-dochung/"), ("경산·하양", "/life/gyeongsan-hayang/")],
+     ("안동·도청신도시", "/life/andong-dochung/"), ("경산·하양", "/life/gyeongsan-hayang/"),
+     ("영주·문경", "/life/yeongju-mungyeong/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -788,3 +792,5 @@ from content_more3 import MORE_PAGES3  # noqa: E402
 PAGES += MORE_PAGES3
 from content_more4 import MORE_PAGES4  # noqa: E402
 PAGES += MORE_PAGES4
+from content_more5 import MORE_PAGES5  # noqa: E402
+PAGES += MORE_PAGES5
