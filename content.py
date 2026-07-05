@@ -186,11 +186,15 @@ BUSAN = region_page(
         {"title": "서면·전포", "body": "부산 최대 도심 상권. 환승역과 오피스텔 공동현관 규정 확인.", "url": "/life/busan-seomyeon-jeonpo/"},
         {"title": "광안리·수영", "body": "해안 숙박권과 민락·남천 주거권. 야간 이동 거리 확인.", "url": "/life/busan-gwangalli-suyeong/"},
         {"title": "명지·강서·공항", "body": "신도시·김해공항 인접권. 장기 출장 숙소와 이동 거리 확인.", "url": "/life/busan-west-airport-myeongji/"},
-        {"title": "동래·연산", "body": "온천장·행정 생활권. 아파트 단지 출입 동선 확인.", "url": "/busan/"},
-        {"title": "기장·정관", "body": "외곽 신도시 생활권. 이동 거리와 예약 시간대 확인.", "url": "/busan/"},
+        {"title": "부산역·남포", "body": "KTX 부산역·남포 원도심 관광 숙소. 성수기 방문 정책 확인.", "url": "/life/busan-station-nampo/"},
+        {"title": "동래·온천장", "body": "온천 숙박과 동래·연산 행정·주거권. 단지 출입 동선 확인.", "url": "/life/busan-dongnae-oncheon/"},
+        {"title": "사상·하단", "body": "서부시외버스터미널·낙동강 서부 주거권. 이동·주차 확인.", "url": "/life/busan-sasang-hadan/"},
+        {"title": "기장·정관", "body": "정관신도시·오시리아 리조트. 이동 거리와 방문 정책 확인.", "url": "/life/busan-gijang-jeonggwan/"},
     ],
     [("해운대·센텀", "/life/busan-haeundae-centum/"), ("서면·전포", "/life/busan-seomyeon-jeonpo/"),
-     ("광안리·수영", "/life/busan-gwangalli-suyeong/"), ("명지·강서·공항", "/life/busan-west-airport-myeongji/")],
+     ("광안리·수영", "/life/busan-gwangalli-suyeong/"), ("부산역·남포", "/life/busan-station-nampo/"),
+     ("동래·온천장", "/life/busan-dongnae-oncheon/"), ("사상·하단", "/life/busan-sasang-hadan/"),
+     ("기장·정관", "/life/busan-gijang-jeonggwan/"), ("명지·강서·공항", "/life/busan-west-airport-myeongji/")],
     [("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -269,12 +273,11 @@ GIMHAE = region_page(
     "좋습니다.</p>",
     [
         {"title": "장유·율하", "body": "신도시 아파트·오피스텔 밀집. 공동현관·방문 등록 확인.", "url": "/life/gimhae-jangyu-yulha/"},
-        {"title": "내외동", "body": "김해 도심 생활권·상권. 오피스텔 출입 규정 확인.", "url": "/gimhae/"},
-        {"title": "삼계·구산", "body": "주거지 생활권. 아파트 단지 주차·출입 동선 확인.", "url": "/gimhae/"},
+        {"title": "내외동·삼계", "body": "김해 원도심 상권·주거권. 도심 오피스텔·아파트 출입 확인.", "url": "/life/gimhae-naeoe-samgye/"},
         {"title": "공항 인접권", "body": "부산 강서·김해공항 연결권. 이동 거리·예약 시간대 확인.", "url": "/gimhae/"},
     ],
-    [("장유·율하", "/life/gimhae-jangyu-yulha/"), ("내외동", "/gimhae/"),
-     ("삼계·구산", "/gimhae/"), ("진영", "/gimhae/")],
+    [("장유·율하", "/life/gimhae-jangyu-yulha/"), ("내외동·삼계", "/life/gimhae-naeoe-samgye/"),
+     ("공항 인접권", "/gimhae/"), ("진영", "/gimhae/")],
     [("스웨디시", "/program/swedish/"), ("타이마사지", "/program/thai-massage/"),
      ("아로마테라피", "/program/aroma-therapy/")],
     region_faqs([
@@ -324,10 +327,11 @@ GYEONGBUK = region_page(
     [
         {"title": "포항·경주", "body": "포항 철강산단·해안과 경주 보문·황리단길 관광 숙소. 장기·성수기 확인.", "url": "/life/pohang-gyeongju/"},
         {"title": "구미·김천", "body": "구미국가산단·김천혁신도시. KTX·장기 출장 숙소 이동 확인.", "url": "/life/gumi-gimcheon/"},
-        {"title": "안동·경산", "body": "안동 도청신도시·경산 하양 생활권. 이동 거리·예약 시간대 확인.", "url": "/gyeongbuk/"},
+        {"title": "안동·도청신도시", "body": "경북도청신도시 신축 아파트·안동 구도심. 이동 거리 확인.", "url": "/life/andong-dochung/"},
+        {"title": "경산·하양", "body": "대구 인접 대학가 원룸·오피스텔과 산업권. 공간·주차 확인.", "url": "/life/gyeongsan-hayang/"},
     ],
     [("포항·경주", "/life/pohang-gyeongju/"), ("구미·김천", "/life/gumi-gimcheon/"),
-     ("김천혁신도시", "/gyeongbuk/"), ("안동·경산", "/gyeongbuk/")],
+     ("안동·도청신도시", "/life/andong-dochung/"), ("경산·하양", "/life/gyeongsan-hayang/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -769,3 +773,5 @@ PAGES = [
 # Imported after the factories above are defined to avoid a circular import.
 from content_more import MORE_PAGES  # noqa: E402
 PAGES += MORE_PAGES
+from content_more2 import MORE_PAGES2  # noqa: E402
+PAGES += MORE_PAGES2
