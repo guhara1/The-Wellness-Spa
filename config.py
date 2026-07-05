@@ -9,3 +9,7 @@ TEL_LINK = "tel:0508-202-4719"
 TELEGRAM_BUILD = "https://t.me/gandago"       # 웹사이트 제작문의
 TELEGRAM_PARTNER = "https://t.me/gandago"     # 제휴문의
 OG_IMAGE = SITE_URL + "/assets/img/og-default.svg"
+# Hero banner image shown inside every page's hero box.
+# Upload your image to assets/img/hero.jpg (or change the path/extension here).
+# Set to "" to disable the hero image site-wide.
+HERO_IMAGE = "/assets/img/hero.jpg"

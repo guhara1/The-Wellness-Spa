@@ -1,10 +1,30 @@
 # -*- coding: utf-8 -*-
 """Reusable HTML content blocks for composing page bodies (used by content.py)."""
 import html
+import re
+
+from config import HERO_IMAGE, SITE_NAME
 
 
 def esc(s):
     return html.escape(s, quote=True)
+
+
+def _hero_media(h1):
+    """Image shown inside every hero box. Alt text is derived from the H1.
+    If the image file is missing, onerror removes the box so no broken icon
+    is shown before the user uploads it."""
+    if not HERO_IMAGE:
+        return ""
+    alt = re.sub(r"<[^>]+>", " ", h1)
+    alt = re.sub(r"\s+", " ", alt).strip()
+    return (
+        '<div class="hero-media">'
+        f'<img src="{esc(HERO_IMAGE)}" alt="{esc(alt)} | {esc(SITE_NAME)}" '
+        'loading="eager" decoding="async" '
+        'onerror="this.closest(\'.hero-media\').remove()">'
+        '</div>'
+    )
 
 
 def hero(h1, lead, ctas=None, eyebrow=None):
@@ -23,6 +43,7 @@ def hero(h1, lead, ctas=None, eyebrow=None):
     <h1>{h1}</h1>
     <p class="lead">{lead}</p>
     {cta}
+    {_hero_media(h1)}
   </div>
 </section>"""
 
