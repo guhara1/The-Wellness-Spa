@@ -52,6 +52,12 @@ PRICING = """
 <a class="brand-text" href="/check/travel/">상세 요금 안내 보기 →</a></p>
 """.replace("%TEL%", TEL_LINK)
 
+
+def pricing_section():
+    """Course/price table — shared across the home page and every region page."""
+    return section("이용 코스와 요금 살펴보기", PRICING, eyebrow="COURSE & PRICE", tight=True)
+
+
 REGION_CARDS = [
     {"title": "부산권", "body": "해운대·서면·광안리·명지·기장 등 해안 상권과 도심 생활권 중심.", "url": "/busan/", "cta": "부산권 보기"},
     {"title": "창원권", "body": "상남·중앙·성산 업무지구와 창원국가산단·진해 해안 생활권.", "url": "/changwon/", "cta": "창원권 보기"},
@@ -105,9 +111,7 @@ home_body = (
               ("권역 보기", "#regions", "btn--ghost")],
         eyebrow="부산·경남·경북·제주 방문형 웰니스 안내",
     )
-    + section("이용 코스와 요금 살펴보기", PRICING,
-              eyebrow="COURSE & PRICE",
-              tight=True)
+    + pricing_section()
     + section("부산·경남·경북·제주는 생활권별 이용 기준이 다릅니다",
               prose(
                   "<p>같은 ‘출장마사지’ 검색이라도 지역마다 실제 확인해야 할 항목이 다릅니다. "
@@ -157,6 +161,7 @@ def region_page(path, name, title, desc, h1, lead, intro_html,
     body = (
         hero(h1, lead, ctas=CTA, eyebrow=f"{name} 생활권 안내")
         + section(f"{name} 생활권 특징", prose(intro_html) + SERVICE_NOTE)
+        + pricing_section()
         + section("주요 도시·구·군 안내", cards(area_cards, cols=3), eyebrow="AREAS")
         + section("핵심 생활권 바로가기", chips(life_chips), eyebrow="LIFE AREAS")
         + section("추천 프로그램", chips(program_chips), eyebrow="PROGRAMS")
@@ -393,6 +398,7 @@ def life_page(path, name, title, desc, h1, lead, sections_html, region_crumb, fa
     body = (
         hero(h1, lead, ctas=CTA, eyebrow=f"{name} 생활권")
         + section("", prose(sections_html) + SERVICE_NOTE, center_head=False)
+        + pricing_section()
         + section("추천 프로그램·이용 장소", chips([
             ("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
             ("호텔·숙소 이용 기준", "/use/hotel/"), ("건물 출입 확인", "/check/building-access/"),
