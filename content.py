@@ -194,7 +194,9 @@ BUSAN = region_page(
     [("해운대·센텀", "/life/busan-haeundae-centum/"), ("서면·전포", "/life/busan-seomyeon-jeonpo/"),
      ("광안리·수영", "/life/busan-gwangalli-suyeong/"), ("부산역·남포", "/life/busan-station-nampo/"),
      ("동래·온천장", "/life/busan-dongnae-oncheon/"), ("사상·하단", "/life/busan-sasang-hadan/"),
-     ("기장·정관", "/life/busan-gijang-jeonggwan/"), ("명지·강서·공항", "/life/busan-west-airport-myeongji/")],
+     ("기장·정관", "/life/busan-gijang-jeonggwan/"), ("명지·강서·공항", "/life/busan-west-airport-myeongji/"),
+     ("남구·대연·문현", "/life/busan-namgu-daeyeon/"), ("금정·부산대", "/life/busan-geumjeong-pnu/"),
+     ("북구·화명·덕천", "/life/busan-bukgu-hwamyeong/")],
     [("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -275,10 +277,11 @@ GIMHAE = region_page(
     [
         {"title": "장유·율하", "body": "신도시 아파트·오피스텔 밀집. 공동현관·방문 등록 확인.", "url": "/life/gimhae-jangyu-yulha/"},
         {"title": "내외동·삼계", "body": "김해 원도심 상권·주거권. 도심 오피스텔·아파트 출입 확인.", "url": "/life/gimhae-naeoe-samgye/"},
+        {"title": "진영", "body": "봉하·진영역 낀 동부 외곽 신도시. 이동 거리·아파트 출입 확인.", "url": "/life/gimhae-jinyeong/"},
         {"title": "공항 인접권", "body": "부산 강서·김해공항 연결권. 이동 거리·예약 시간대 확인.", "url": "/gimhae/"},
     ],
     [("장유·율하", "/life/gimhae-jangyu-yulha/"), ("내외동·삼계", "/life/gimhae-naeoe-samgye/"),
-     ("공항 인접권", "/gimhae/"), ("진영", "/gimhae/")],
+     ("진영", "/life/gimhae-jinyeong/"), ("공항 인접권", "/gimhae/")],
     [("스웨디시", "/program/swedish/"), ("타이마사지", "/program/thai-massage/"),
      ("아로마테라피", "/program/aroma-therapy/")],
     region_faqs([
@@ -360,10 +363,11 @@ JEJU = region_page(
         {"title": "애월·함덕", "body": "해안 펜션·독채. 야간 이동 거리와 숙소 정책 확인.", "url": "/life/jeju-aewol-hamdeok/"},
         {"title": "중문·성산", "body": "중문 관광단지 리조트·호텔과 성산 동부. 성수기·장거리 확인.", "url": "/life/jeju-jungmun-seongsan/"},
         {"title": "서귀포 도심", "body": "이중섭거리·올레시장 구도심과 강정 혁신도시. 이동 거리 확인.", "url": "/life/seogwipo-downtown/"},
+        {"title": "대정·안덕", "body": "모슬포·산방산·영어교육도시 제주 서부. 관광 펜션·이동 확인.", "url": "/life/jeju-daejeong-andeok/"},
     ],
     [("연동·노형", "/life/jeju-city-seogwipo/"), ("제주공항", "/jeju/"),
      ("애월·함덕", "/life/jeju-aewol-hamdeok/"), ("중문·성산", "/life/jeju-jungmun-seongsan/"),
-     ("서귀포 도심", "/life/seogwipo-downtown/")],
+     ("서귀포 도심", "/life/seogwipo-downtown/"), ("대정·안덕", "/life/jeju-daejeong-andeok/")],
     [("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -782,3 +786,5 @@ from content_more2 import MORE_PAGES2  # noqa: E402
 PAGES += MORE_PAGES2
 from content_more3 import MORE_PAGES3  # noqa: E402
 PAGES += MORE_PAGES3
+from content_more4 import MORE_PAGES4  # noqa: E402
+PAGES += MORE_PAGES4
