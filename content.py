@@ -83,6 +83,10 @@ PROGRAM_CARDS = [
     {"title": "아로마테라피", "body": "향·피부 민감도와 숙소 오일 정책을 함께 확인합니다.", "url": "/program/aroma-therapy/"},
     {"title": "스포츠 마사지", "body": "운동 후 압 조절 중심. 치료·회복 보장 표현은 쓰지 않습니다.", "url": "/program/sports-massage/"},
     {"title": "발마사지", "body": "장시간 보행·관광객에게 맞춘 발·종아리 집중 관리.", "url": "/program/foot-massage/"},
+    {"title": "딥티슈", "body": "심부 근육을 강한 압으로 집중 관리. 통증 부위 사전 고지.", "url": "/program/deep-tissue/"},
+    {"title": "로미로미", "body": "팔·전완을 활용한 리듬감 있는 하와이안 오일 케어.", "url": "/program/lomi-lomi/"},
+    {"title": "커플 관리", "body": "두 분이 함께 받는 2인 동시 진행. 공간·인원 확인.", "url": "/program/couple/"},
+    {"title": "야간 예약", "body": "야간 건물 출입·이동 확인 후 안내. 24시간 무제한 아님.", "url": "/program/night/"},
 ]
 
 USE_CARDS = [
@@ -179,14 +183,14 @@ BUSAN = region_page(
     "명지·강서는 이동 거리를 예약 전에 확인하는 것이 좋습니다.</p>",
     [
         {"title": "해운대·센텀", "body": "마린시티·벡스코 인접 호텔·오피스텔 밀집. 관광 숙소 방문 정책 확인.", "url": "/life/busan-haeundae-centum/"},
-        {"title": "서면·전포", "body": "부산 최대 도심 상권. 환승역과 오피스텔 공동현관 규정 확인.", "url": "/busan/"},
-        {"title": "광안리·수영", "body": "해안 숙박권과 민락·남천 주거권. 야간 이동 거리 확인.", "url": "/busan/"},
-        {"title": "명지·강서", "body": "신도시·김해공항 인접권. 장기 출장 숙소와 이동 거리 확인.", "url": "/busan/"},
+        {"title": "서면·전포", "body": "부산 최대 도심 상권. 환승역과 오피스텔 공동현관 규정 확인.", "url": "/life/busan-seomyeon-jeonpo/"},
+        {"title": "광안리·수영", "body": "해안 숙박권과 민락·남천 주거권. 야간 이동 거리 확인.", "url": "/life/busan-gwangalli-suyeong/"},
+        {"title": "명지·강서·공항", "body": "신도시·김해공항 인접권. 장기 출장 숙소와 이동 거리 확인.", "url": "/life/busan-west-airport-myeongji/"},
         {"title": "동래·연산", "body": "온천장·행정 생활권. 아파트 단지 출입 동선 확인.", "url": "/busan/"},
         {"title": "기장·정관", "body": "외곽 신도시 생활권. 이동 거리와 예약 시간대 확인.", "url": "/busan/"},
     ],
-    [("해운대·센텀", "/life/busan-haeundae-centum/"), ("서면·전포", "/busan/"),
-     ("광안리·수영", "/busan/"), ("부산역·남포", "/busan/"), ("명지·강서", "/busan/")],
+    [("해운대·센텀", "/life/busan-haeundae-centum/"), ("서면·전포", "/life/busan-seomyeon-jeonpo/"),
+     ("광안리·수영", "/life/busan-gwangalli-suyeong/"), ("명지·강서·공항", "/life/busan-west-airport-myeongji/")],
     [("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -212,11 +216,10 @@ CHANGWON = region_page(
     [
         {"title": "상남·중앙", "body": "창원 핵심 도심·상권. 오피스텔 공동현관·주차 확인.", "url": "/life/changwon-sangnam-jungang/"},
         {"title": "의창·성산", "body": "행정·업무지구와 팔용 생활권. 아파트 단지 출입 확인.", "url": "/changwon/"},
-        {"title": "창원국가산단", "body": "산단 인접 장기 출장 숙소. 야간 이동·주차 동선 확인.", "url": "/changwon/"},
-        {"title": "진해 석동·용원", "body": "진해 해안 생활권. 이동 거리와 예약 시간대 확인.", "url": "/changwon/"},
+        {"title": "창원국가산단·진해", "body": "산단 인접 장기 출장 숙소·진해 해안. 야간 이동·주차 확인.", "url": "/life/changwon-industrial-jinhae/"},
     ],
-    [("상남·중앙", "/life/changwon-sangnam-jungang/"), ("창원국가산단", "/changwon/"),
-     ("진해 석동·용원", "/changwon/"), ("창원중앙역", "/changwon/")],
+    [("상남·중앙", "/life/changwon-sangnam-jungang/"),
+     ("창원국가산단·진해", "/life/changwon-industrial-jinhae/"), ("창원중앙역", "/changwon/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("스웨디시", "/program/swedish/"),
      ("아로마테라피", "/program/aroma-therapy/")],
     region_faqs([
@@ -239,12 +242,11 @@ MASAN = region_page(
     "<p>구도심 특성상 노후 오피스텔·주택의 공동현관과 주차 동선, 마산역 인접 숙소의 이동 거리를 예약 전에 "
     "확인하는 것이 좋습니다.</p>",
     [
-        {"title": "마산합포구", "body": "오동동·창동·월영 구도심 상권. 노후 건물 출입 동선 확인.", "url": "/masan/"},
-        {"title": "마산회원구", "body": "석전·양덕·합성 주거권. 아파트 단지·주차 확인.", "url": "/masan/"},
+        {"title": "마산합포·마산회원", "body": "오동동·창동 구도심과 석전·양덕 주거권. 노후 건물 출입 확인.", "url": "/life/masan-happo-hoewon/"},
         {"title": "마산역·석전", "body": "마산역 인접 숙소·이동 거점. 예약 시간대·이동 거리 확인.", "url": "/masan/"},
         {"title": "내서읍", "body": "마산 외곽 주거 생활권. 이동 거리 확인 후 안내.", "url": "/masan/"},
     ],
-    [("마산합포구", "/masan/"), ("마산회원구", "/masan/"),
+    [("마산합포·마산회원", "/life/masan-happo-hoewon/"),
      ("마산역·석전", "/masan/"), ("오동동·창동", "/masan/")],
     [("발마사지", "/program/foot-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("스웨디시", "/program/swedish/")],
@@ -293,13 +295,13 @@ GYEONGNAM = region_page(
     "<p>거제·통영은 장거리 이동과 리조트·펜션 정책을, 진주혁신도시는 오피스텔 출입 규정을 예약 전에 "
     "확인하는 것이 좋습니다.</p>",
     [
-        {"title": "양산·물금", "body": "물금 신도시 아파트·오피스텔. 부산·울산 사이 이동 거리 확인.", "url": "/gyeongnam/"},
-        {"title": "진주·혁신도시", "body": "평거·가좌·혁신도시 생활권. KTX·터미널 이동 기준 확인.", "url": "/gyeongnam/"},
-        {"title": "거제·통영", "body": "조선업 숙소·해안 리조트. 장거리 이동과 숙소 정책 확인.", "url": "/gyeongnam/"},
+        {"title": "양산·물금", "body": "물금 신도시 아파트·오피스텔. 부산·울산 사이 이동 거리 확인.", "url": "/life/yangsan-mulgeum/"},
+        {"title": "진주·혁신도시", "body": "평거·가좌·혁신도시 생활권. KTX·터미널 이동 기준 확인.", "url": "/life/jinju-innovation-city/"},
+        {"title": "거제·통영", "body": "조선업 숙소·해안 리조트. 장거리 이동과 숙소 정책 확인.", "url": "/life/geoje-tongyeong/"},
         {"title": "사천·밀양", "body": "삼천포·밀양 도심 생활권. 이동 거리·예약 시간대 확인.", "url": "/gyeongnam/"},
     ],
-    [("양산·물금", "/gyeongnam/"), ("진주혁신도시", "/gyeongnam/"),
-     ("거제·고현·옥포", "/gyeongnam/"), ("통영·죽림", "/gyeongnam/")],
+    [("양산·물금", "/life/yangsan-mulgeum/"), ("진주혁신도시", "/life/jinju-innovation-city/"),
+     ("거제·통영", "/life/geoje-tongyeong/"), ("통영·죽림", "/gyeongnam/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -320,13 +322,12 @@ GYEONGBUK = region_page(
     "<p>산단 인접 숙소는 장기 체류·야간 이동을, 경주 관광 숙소는 성수기 방문 정책을 예약 전에 확인하는 "
     "것이 좋습니다.</p>",
     [
-        {"title": "포항·영일대", "body": "철강산단·영일대 해안 숙소. 장기 체류·야간 이동 확인.", "url": "/gyeongbuk/"},
-        {"title": "경주·보문", "body": "보문단지·황리단길 관광 숙소·리조트. 성수기 방문 정책 확인.", "url": "/gyeongbuk/"},
-        {"title": "구미·인동", "body": "구미국가산단·오피스텔. KTX·장기 출장 숙소 이동 확인.", "url": "/gyeongbuk/"},
-        {"title": "김천·안동", "body": "김천혁신도시·안동 도청신도시. 이동 거리·예약 시간대 확인.", "url": "/gyeongbuk/"},
+        {"title": "포항·경주", "body": "포항 철강산단·해안과 경주 보문·황리단길 관광 숙소. 장기·성수기 확인.", "url": "/life/pohang-gyeongju/"},
+        {"title": "구미·김천", "body": "구미국가산단·김천혁신도시. KTX·장기 출장 숙소 이동 확인.", "url": "/life/gumi-gimcheon/"},
+        {"title": "안동·경산", "body": "안동 도청신도시·경산 하양 생활권. 이동 거리·예약 시간대 확인.", "url": "/gyeongbuk/"},
     ],
-    [("포항·영일대", "/gyeongbuk/"), ("경주·보문", "/gyeongbuk/"),
-     ("구미·인동", "/gyeongbuk/"), ("김천혁신도시", "/gyeongbuk/")],
+    [("포항·경주", "/life/pohang-gyeongju/"), ("구미·김천", "/life/gumi-gimcheon/"),
+     ("김천혁신도시", "/gyeongbuk/"), ("안동·경산", "/gyeongbuk/")],
     [("스포츠 마사지", "/program/sports-massage/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -349,11 +350,11 @@ JEJU = region_page(
     [
         {"title": "연동·노형", "body": "제주시 도심 호텔·오피스텔. 공항 접근성·방문 정책 확인.", "url": "/life/jeju-city-seogwipo/"},
         {"title": "제주공항·용담", "body": "공항 인접 숙소·렌터카 이동 거점. 이동 거리 확인.", "url": "/jeju/"},
-        {"title": "애월·함덕", "body": "해안 펜션·리조트. 야간 이동 거리와 숙소 정책 확인.", "url": "/jeju/"},
-        {"title": "서귀포·중문", "body": "중문 관광단지 리조트·호텔. 성수기 방문 정책 확인.", "url": "/life/jeju-city-seogwipo/"},
+        {"title": "애월·함덕", "body": "해안 펜션·독채. 야간 이동 거리와 숙소 정책 확인.", "url": "/life/jeju-aewol-hamdeok/"},
+        {"title": "중문·성산", "body": "중문 관광단지 리조트·호텔과 성산 동부. 성수기·장거리 확인.", "url": "/life/jeju-jungmun-seongsan/"},
     ],
     [("연동·노형", "/life/jeju-city-seogwipo/"), ("제주공항", "/jeju/"),
-     ("애월·함덕", "/jeju/"), ("중문·색달", "/jeju/"), ("성산·표선", "/jeju/")],
+     ("애월·함덕", "/life/jeju-aewol-hamdeok/"), ("중문·성산", "/life/jeju-jungmun-seongsan/")],
     [("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
      ("발마사지", "/program/foot-massage/")],
     region_faqs([
@@ -374,7 +375,8 @@ def life_page(path, name, title, desc, h1, lead, sections_html, region_crumb, fa
         + section("", prose(sections_html) + SERVICE_NOTE, center_head=False)
         + section("추천 프로그램·이용 장소", chips([
             ("스웨디시", "/program/swedish/"), ("아로마테라피", "/program/aroma-therapy/"),
-            ("호텔·숙소 이용 기준", "/use/"), ("예약 전 확인", "/check/"),
+            ("호텔·숙소 이용 기준", "/use/hotel/"), ("건물 출입 확인", "/check/building-access/"),
+            ("이동비·요금 기준", "/check/travel/"), ("예약 전 확인", "/check/"),
         ]), eyebrow="LINKS")
         + section("자주 묻는 질문", faq_block(faqs), eyebrow="FAQ")
         + section("작성·검수 기준", WHO_HOW_WHY, eyebrow="WHO · HOW · WHY", tight=True)
@@ -610,6 +612,11 @@ USE = {
             "<h2>오피스텔</h2><p>공동현관 비밀번호·방문 등록 등 건물 규정을 확인합니다.</p>"
             "<h2>리조트·펜션</h2><p>관광 숙소 방문 정책과 야간 이동 거리를 함께 확인합니다.</p>"
         ) + SERVICE_NOTE, center_head=False)
+        + section("장소별 상세 안내", chips([
+            ("자택·아파트", "/use/home/"), ("호텔·숙소", "/use/hotel/"),
+            ("오피스텔", "/use/officetel/"), ("리조트·펜션", "/use/resort/"),
+            ("산업단지 인접", "/use/industrial-area/"), ("야간 예약", "/use/night/"),
+        ]), eyebrow="PLACES")
         + section("지역별 안내로 이동", chips([
             ("부산", "/busan/"), ("창원", "/changwon/"), ("김해", "/gimhae/"),
             ("경남", "/gyeongnam/"), ("경북", "/gyeongbuk/"), ("제주", "/jeju/"),
@@ -643,6 +650,11 @@ CHECK = {
             "<h2 id='travel'>요금·이동</h2><p>60·90·120분 코스별 기준 요금이 있으며, 이동 거리에 따라 상담 시 최종 확인됩니다.</p>"
             "<h2>개인정보 처리</h2><p>예약에 필요한 최소 정보만 확인하며 개인정보처리방침에 따라 처리합니다.</p>"
         ) + SERVICE_NOTE, center_head=False)
+        + section("항목별 상세 확인", chips([
+            ("주소·위치 확인", "/check/address/"), ("건물 출입 확인", "/check/building-access/"),
+            ("예약 시간 확인", "/check/time/"), ("이동비·요금 기준", "/check/travel/"),
+            ("야간 출입·이동", "/check/night-access/"), ("개인정보처리방침", "/policy/privacy/"),
+        ]), eyebrow="CHECKLIST")
         + section("자주 묻는 질문", faq_block([
             ("예약할 때 무엇을 알려줘야 하나요?",
              "지역·숙소 유형·건물 출입 방법·희망 시간대를 알려주시면 방문 가능 여부와 이동 시간을 확인해 드립니다."),
@@ -752,3 +764,8 @@ PAGES = [
     PROGRAM_HUB, SWEDISH, THAI, AROMA, SPORTS, FOOT,
     USE, CHECK, ABOUT, PRIVACY, SERVICE_POLICY, CONTACT,
 ]
+
+# Expansion pages (life areas, place/checklist guides, extra programs).
+# Imported after the factories above are defined to avoid a circular import.
+from content_more import MORE_PAGES  # noqa: E402
+PAGES += MORE_PAGES
