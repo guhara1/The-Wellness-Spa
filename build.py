@@ -21,6 +21,8 @@ import re
 from config import (  # noqa: E402
     SITE_NAME, SITE_URL, TEL_DISPLAY, TEL_LINK,
     TELEGRAM_BUILD, TELEGRAM_PARTNER, OG_IMAGE,
+    NAVER_SITE_VERIFICATION, GOOGLE_SITE_VERIFICATION,
+    RSS_TITLE, RSS_DESC,
 )
 
 OUT = os.path.dirname(os.path.abspath(__file__))
@@ -101,12 +103,37 @@ def header_html(rel):
 </header>"""
 
 
+# Long-tail internal links (descriptive anchors → real pages). Shown site-wide
+# to strengthen internal linking from the home page and every region page.
+LONGTAIL_LINKS = [
+    ("부산 해운대 호텔 스웨디시 안내", "/life/busan-haeundae-centum/"),
+    ("부산 서면 오피스텔 타이마사지 안내", "/life/busan-seomyeon-jeonpo/"),
+    ("부산 광안리 해안 숙소 아로마 안내", "/life/busan-gwangalli-suyeong/"),
+    ("창원 상남 오피스텔 스포츠 마사지 안내", "/life/changwon-sangnam-jungang/"),
+    ("김해 장유 신도시 아파트 스웨디시 안내", "/life/gimhae-jangyu-yulha/"),
+    ("제주 중문 리조트 커플 관리 안내", "/life/jeju-jungmun-seongsan/"),
+    ("제주 연동·노형 호텔 아로마 안내", "/life/jeju-city-seogwipo/"),
+    ("포항·경주 관광 숙소 발마사지 안내", "/life/pohang-gyeongju/"),
+    ("거제·통영 해안 리조트 아로마 안내", "/life/geoje-tongyeong/"),
+    ("호텔 출장마사지 방문 정책 확인", "/use/hotel/"),
+    ("오피스텔 공동현관 이용 안내", "/use/officetel/"),
+    ("이동비·요금 기준 안내", "/check/travel/"),
+    ("야간 예약 건물 출입 안내", "/check/night-access/"),
+    ("자택·아파트 공동현관 방문 등록 안내", "/use/home/"),
+]
+
+
 def footer_html():
     region_links = "".join(f'<a href="{u}">{esc(t)}</a>' for t, u in FOOTER_REGIONS)
     info_links = "".join(f'<a href="{u}">{esc(t)}</a>' for t, u in FOOTER_INFO)
+    longtail = "".join(f'<a class="chip" href="{u}">{esc(t)}</a>' for t, u in LONGTAIL_LINKS)
     return f"""
 <footer class="site-footer">
   <div class="container">
+    <div class="footer-longtail">
+      <h4>자주 찾는 지역·프로그램 안내</h4>
+      <div class="chips">{longtail}</div>
+    </div>
     <div class="footer-grid">
       <div class="footer-col">
         <h4>{SITE_NAME} 출장마사지 지역 안내</h4>
@@ -158,9 +185,19 @@ def organization_node():
         "url": SITE_URL + "/",
         "telephone": TEL_DISPLAY,
         "description": "부산·경남·경북·제주 방문형 웰니스 서비스의 지역·이용 기준 안내",
+        "areaServed": ["부산", "경상남도", "경상북도", "제주"],
         "logo": {
             "@type": "ImageObject",
             "url": OG_IMAGE,
+            "width": 1200,
+            "height": 630,
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": TEL_DISPLAY,
+            "contactType": "reservations",
+            "areaServed": "KR",
+            "availableLanguage": ["Korean"],
         },
         "sameAs": [TELEGRAM_BUILD],
     }
@@ -266,19 +303,24 @@ PAGE_TMPL = """<!DOCTYPE html>
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canonical}">
-{robots}
+{robots}{verify}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{site}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:image" content="{ogimage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{ogimage}">
 <meta name="theme-color" content="#0b0f16">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="{site} 업데이트" href="/rss.xml">
 <link rel="stylesheet" href="/assets/css/style.css">
 <script type="application/ld+json">
 {schema}
@@ -297,9 +339,19 @@ PAGE_TMPL = """<!DOCTYPE html>
 </html>"""
 
 
+def verification_meta():
+    tags = []
+    if NAVER_SITE_VERIFICATION:
+        tags.append(f'\n<meta name="naver-site-verification" content="{esc(NAVER_SITE_VERIFICATION)}">')
+    if GOOGLE_SITE_VERIFICATION:
+        tags.append(f'\n<meta name="google-site-verification" content="{esc(GOOGLE_SITE_VERIFICATION)}">')
+    return "".join(tags)
+
+
 def render(page):
     canonical = SITE_URL + page["path"]
-    robots = '<meta name="robots" content="noindex, follow">' if page.get("noindex") else ""
+    robots = '<meta name="robots" content="noindex, follow">' if page.get("noindex") else \
+             '<meta name="robots" content="index, follow, max-image-preview:large">'
     desc = page["desc"]
     assert len(desc) <= 80, f"description too long ({len(desc)}): {page['path']}"
     return PAGE_TMPL.format(
@@ -307,6 +359,7 @@ def render(page):
         desc=esc(desc),
         canonical=esc(canonical),
         robots=robots,
+        verify=verification_meta(),
         site=esc(SITE_NAME),
         ogimage=esc(OG_IMAGE),
         schema=build_schema(page),
@@ -336,29 +389,84 @@ def write_page(page):
 from content import PAGES  # noqa: E402
 
 
+def _today():
+    import datetime
+    return datetime.date.today().isoformat()
+
+
 def write_sitemap(pages):
+    today = _today()
     urls = []
     for p in pages:
         if p.get("noindex"):
             continue
+        img = (
+            "<image:image><image:loc>" + OG_IMAGE + "</image:loc></image:image>"
+        )
         urls.append(
             f"  <url><loc>{SITE_URL}{p['path']}</loc>"
-            f"<changefreq>weekly</changefreq><priority>{p.get('priority','0.6')}</priority></url>"
+            f"<lastmod>{today}</lastmod>"
+            f"<changefreq>weekly</changefreq><priority>{p.get('priority','0.6')}</priority>"
+            f"{img}</url>"
         )
     xml = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+        'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
         + "\n".join(urls) + "\n</urlset>\n"
     )
     with open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(xml)
 
 
+def write_rss(pages):
+    """Lightweight RSS 2.0 feed — aids discovery/indexing (Naver, feed readers)."""
+    # RFC-822-ish date; time fixed to midnight to stay deterministic per build day.
+    import datetime
+    d = datetime.date.today()
+    pubdate = d.strftime("%a, %d %b %Y 00:00:00 +0900")
+    items = []
+    for p in pages:
+        if p.get("noindex"):
+            continue
+        loc = SITE_URL + p["path"]
+        items.append(
+            "    <item>"
+            f"<title>{esc(p['title'])}</title>"
+            f"<link>{loc}</link>"
+            f"<guid isPermaLink=\"true\">{loc}</guid>"
+            f"<description>{esc(p['desc'])}</description>"
+            f"<pubDate>{pubdate}</pubDate>"
+            "</item>"
+        )
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+        "  <channel>\n"
+        f"    <title>{esc(RSS_TITLE)}</title>\n"
+        f"    <link>{SITE_URL}/</link>\n"
+        f'    <atom:link href="{SITE_URL}/rss.xml" rel="self" type="application/rss+xml"/>\n'
+        f"    <description>{esc(RSS_DESC)}</description>\n"
+        "    <language>ko-KR</language>\n"
+        f"    <lastBuildDate>{pubdate}</lastBuildDate>\n"
+        + "\n".join(items) + "\n"
+        "  </channel>\n</rss>\n"
+    )
+    with open(os.path.join(OUT, "rss.xml"), "w", encoding="utf-8") as f:
+        f.write(xml)
+
+
 def write_robots():
     txt = (
+        "# 모든 검색엔진 크롤러 허용 (Google, Naver Yeti, Bing 등)\n"
         "User-agent: *\n"
         "Allow: /\n\n"
+        "User-agent: Yeti\n"          # Naver
+        "Allow: /\n\n"
+        "User-agent: Googlebot\n"
+        "Allow: /\n\n"
         f"Sitemap: {SITE_URL}/sitemap.xml\n"
+        f"Sitemap: {SITE_URL}/rss.xml\n"
     )
     with open(os.path.join(OUT, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(txt)
@@ -367,8 +475,9 @@ def write_robots():
 def main():
     written = [write_page(p) for p in PAGES]
     write_sitemap(PAGES)
+    write_rss(PAGES)
     write_robots()
-    print(f"Generated {len(written)} pages + sitemap.xml + robots.txt")
+    print(f"Generated {len(written)} pages + sitemap.xml + rss.xml + robots.txt")
     for p in written:
         print("  ", p)
 

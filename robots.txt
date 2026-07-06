@@ -1,4 +1,12 @@
+# 모든 검색엔진 크롤러 허용 (Google, Naver Yeti, Bing 등)
 User-agent: *
 Allow: /
 
-Sitemap: https://ganda-go.co.kr/sitemap.xml
+User-agent: Yeti
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://the-wellness-spa.pages.dev/sitemap.xml
+Sitemap: https://the-wellness-spa.pages.dev/rss.xml

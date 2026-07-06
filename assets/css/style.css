@@ -358,6 +358,11 @@ strong { color: var(--text-100); font-weight: 700; }
 .footer-biz { font-size: 0.86rem; color: var(--text-400); line-height: 1.9; }
 .footer-biz strong { color: var(--text-200); }
 
+/* Footer long-tail internal link cluster */
+.footer-longtail { margin-bottom: var(--space-6); padding-bottom: var(--space-5); border-bottom: 1px solid var(--border); }
+.footer-longtail h4 { font-size: 0.95rem; color: var(--text-200); margin-bottom: var(--space-3); }
+.footer-longtail .chip { font-size: 0.82rem; }
+
 /* Footer inquiry buttons — orange, Telegram */
 .footer-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-4); }
 .tg-btn {
